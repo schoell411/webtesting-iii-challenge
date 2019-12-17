@@ -19,3 +19,16 @@ test('displays closed state with red-led', () => {
     getByText(/closed/i);
     queryByText(/red-led/i)
 })
+
+test('displays open state with green-led', () => {
+    const { queryByText, getByText } = render(<Display closed={false} />);
+    getByText(/open/i);
+    queryByText(/green-led/i)
+})
+
+test('displays unlocked state with green-led', () => {
+    const { queryByText, getByText } = render(<Display locked={false} />);
+    getByText(/unlocked/i);
+    queryByText(/green-led/i)
+})
+
